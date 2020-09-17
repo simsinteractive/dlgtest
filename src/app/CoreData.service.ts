@@ -10,14 +10,14 @@ import {
 })
 
 export class CoreDataService {
-  url = 'https://www.metnow.com/cgi-bin/fcio_data.pl?';
+  url = '/assets/faqs.json';
   options: any = {
     crossDomain: true,
-    dataType: 'script',
+    dataType: 'JSON',
     cache: false,
   };
   constructor(private http: HttpClient) {}
-  getData(lat, lon) {
-    return this.http.get(this.url + lat + '&' + lon, this.options);
+  getData() {
+    return this.http.get(this.url, this.options);
   }
 }

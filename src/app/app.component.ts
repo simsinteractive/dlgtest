@@ -12,20 +12,16 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  radarData;
-  lat: any = 55.864;
-  lon: any = -4.252;
+  title = 'dlgapp';
   constructor(public dataService: CoreDataService) {
     this.getData();
   }
 
   getData() {
     this.dataService
-      .getData(this.lat, this.lon)
+      .getData()
       .subscribe((data) => {
         console.log(data);
-        this.radarData = data;
       });
   }
 
